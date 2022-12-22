@@ -5,18 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/21 20:38:28 by abdelbari         #+#    #+#              #
-#    Updated: 2022/12/21 23:51:30 by abdelbari        ###   ########.fr        #
+#    Created: 2022/12/22 00:07:56 by abdelbari         #+#    #+#              #
+#    Updated: 2022/12/22 00:10:12 by abdelbari        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = My_Awsome
 
 CC = g++
 
 CFLAGS = -Wall -Wextra -Werror
 
-src =  megaphone.cpp	\
+src =	main.cpp	\
+		contact.cpp	\
+		phonebook.cpp \
 
 OBJECTS = $(src:.cpp=.o)
 
