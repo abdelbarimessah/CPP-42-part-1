@@ -6,7 +6,7 @@
 /*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:38:34 by abdelbari         #+#    #+#             */
-/*   Updated: 2022/12/22 00:10:12 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/01/24 00:23:47 by abdelbari        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 			putchar(toupper(argv[i][j]));
 			j++;
 		}
-		std::cout << " ";
+		// std::cout << " ";
 		i++;
 	}
 	std::cout << std::endl;
