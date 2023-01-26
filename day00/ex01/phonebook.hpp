@@ -6,7 +6,7 @@
 /*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 00:26:56 by abdelbari         #+#    #+#             */
-/*   Updated: 2022/12/22 01:17:43 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/01/25 23:45:51 by abdelbari        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PhoneBook
     public:
         PhoneBook();
         ~PhoneBook();
-        Contact *getContact(void);
+        Contact *getContact();
         void setContact(Contact con,int index);
         Contact add_contact();
 };
