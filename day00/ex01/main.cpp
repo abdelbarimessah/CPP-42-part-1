@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 00:10:14 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/28 02:19:27 by amessah          ###   ########.fr       */
+/*   Updated: 2023/01/28 21:31:24 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main()
 {
 	PhoneBook new_one;
 	std::string str;
+	std::string x;
+	x = "";
 	int i;
 	int k;
 
@@ -101,22 +103,24 @@ int main()
 					std::cout << std::right << std::setw(10) <<list[j].getNick_name() << "|"<< std::endl;
 			}
 			std::cout << "enter index of cantact that you want to display : ";
-			std::cin >>  status;
-		
-			if( status >= 0 && status <= 7) 
-			{
-				std::cout << "First name     : "<< list[status].getFirst_name()    << std::endl;
-				std::cout << "Last name      : "<< list[status].getLast_name()    << std::endl;
-				std::cout << "Nick name      : "<< list[status].getNick_name()     << std::endl;
-				std::cout << "Phone number   : "<< list[status].getPhone_number()   << std::endl;
-				std::cout << "Darkest Secret : "<< list[status].getDarkset_secret() << std::endl;
-				continue;
-			}
-			else if(!isdigit(status))
-			{
-				std::cout << "wrong index! try again " << std::endl;
-				break ;
-			}
+			std::getline(std::cin, x);
+			
+			// std::cout << x[0];
+			// std::cout << x << std::endl;
+			// if(status  >= 0 && status <= 7)
+			// {
+			// 	std::cout << "First name     : "<< list[status].getFirst_name()    << std::endl;
+			// 	std::cout << "Last name      : "<< list[status].getLast_name()    << std::endl;
+			// 	std::cout << "Nick name      : "<< list[status].getNick_name()     << std::endl;
+			// 	std::cout << "Phone number   : "<< list[status].getPhone_number()   << std::endl;
+			// 	std::cout << "Darkest Secret : "<< list[status].getDarkset_secret() << std::endl;
+			// 	continue;
+			// }
+			// else
+			// {
+			// 	std::cout << "wrong index! try again " << std::endl;
+			// 	break ;
+			// }
 		}
 		else if(str == "EXIT")
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 00:10:28 by abdelbari         #+#    #+#             */
-/*   Updated: 2022/12/22 01:17:26 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/01/28 21:21:30 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include<iostream>
 #include<iomanip>
+#include <cstdlib>
 
 
 class Contact
