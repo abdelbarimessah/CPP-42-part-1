@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 00:10:14 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/28 23:04:02 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/01/28 23:57:43 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int main()
 	{
 		std::cout << "\033[96m Enter an options\033[0m : ";
 		std::getline(std::cin, str);
+		if (std::cin.eof())
+			break;
 		if(str == "ADD")
 		{
 			if(i > 8)
@@ -118,14 +120,17 @@ int main()
 			}
 			std::cout << "enter index of cantact that you want to display : ";
 			std::getline(std::cin, x);
+			if (std::cin.eof())
+				break;
 			if(isNumber(x))
-				status = std::stoi(x);
+			{
+				status = std::atoi(x.c_str());
+			}
 			else
 			{
 				std::cout << "wrong index! try again " << std::endl;
 				continue ;
 			}
-
 			if(status  >= 0 && status < i)
 			{
 				std::cout << "First name     : "<< list[status].getFirst_name()    << std::endl;
@@ -142,12 +147,11 @@ int main()
 			}
 		}
 		else if(str == "EXIT")
-		{
 			break;
-		}
 		else if(str.empty())
 			continue;
 		else
 			std::cout << "\033[0m\033[91m wrong options\033[0m" << std::endl;
 	}
+	std::cout << std::endl;
 }
