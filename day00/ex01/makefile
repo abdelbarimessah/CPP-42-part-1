@@ -6,13 +6,13 @@
 #    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/22 00:07:56 by abdelbari         #+#    #+#              #
-#    Updated: 2022/12/22 00:10:12 by abdelbari        ###   ########.fr        #
+#    Updated: 2023/01/29 01:55:53 by abdelbari        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = My_Awsome
 
-CC = g++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
