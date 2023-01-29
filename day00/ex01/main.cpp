@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 00:10:14 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/28 23:57:43 by amessah          ###   ########.fr       */
+/*   Updated: 2023/01/29 01:22:59 by abdelbari        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int main()
 			std::cout << ".----------.----------.----------.----------." << std::endl;
 			std::cout << "|  index   |first name|last name | nickname |" << std::endl;
 			std::cout << ":----------+----------+----------+----------:" << std::endl;
-			for(int j = 0; j < k; j++)
+			for(int j = 0; j < i; j++)
 			{
 				std::cout << std::right << std::setw(11) << j << "|";
 				if(list[j].getFirst_name().length() > 10)
@@ -122,7 +122,7 @@ int main()
 			std::getline(std::cin, x);
 			if (std::cin.eof())
 				break;
-			if(isNumber(x))
+			if(isNumber(x) && x[0])
 			{
 				status = std::atoi(x.c_str());
 			}
