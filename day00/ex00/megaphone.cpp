@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:38:34 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/24 00:23:47 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/04/24 22:28:37 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(int argc, char **argv)
 			putchar(toupper(argv[i][j]));
 			j++;
 		}
-		// std::cout << " ";
 		i++;
 	}
 	std::cout << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:46:20 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/04 11:25:43 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/04/17 14:51:14 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class HumanA
 		Weapon &instance;
 		std::string name;
 	public:
-		HumanA(const std::string &type, Weapon &var);
+		HumanA(const std::string &name, Weapon &var);
 		void	attack();
 		~HumanA();
 };

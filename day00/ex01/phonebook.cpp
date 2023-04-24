@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 01:02:06 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/04/14 01:09:43 by amessah          ###   ########.fr       */
+/*   Updated: 2023/04/17 11:56:42 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ Contact PhoneBook::add_contact()
 	while(1)
 	{
 		std::cout << "\033[0mFirst Name : ";
-		std::getline(std::cin, str);
+		if(!std::getline(std::cin, str))
+			break;
 		str = TrimFunction(str);
 		if(!str.empty())
 			break ;
@@ -58,7 +59,8 @@ Contact PhoneBook::add_contact()
 	while(1)
 	{
 		std::cout << "Last Name : ";
-		std::getline(std::cin, str);
+		if(!std::getline(std::cin, str))
+			break;
 		str = TrimFunction(str);
 		if(!str.empty())
 			break ;
@@ -67,7 +69,8 @@ Contact PhoneBook::add_contact()
 	while(1)
 	{
 		std::cout << "Nick Name : ";
-		std::getline(std::cin, str);
+		if(!std::getline(std::cin, str))
+			break;
 		str = TrimFunction(str);
 		if(!str.empty())
 			break ;
@@ -76,7 +79,8 @@ Contact PhoneBook::add_contact()
 	while(1)
 	{
 		std::cout << "Phone number : ";
-		std::getline(std::cin, str);
+		if(!std::getline(std::cin, str))
+			break;
 		str = TrimFunction(str);
 		if(!str.empty())
 			break ;
@@ -85,7 +89,8 @@ Contact PhoneBook::add_contact()
 	while(1)
 	{
 		std::cout << "Darkest Secret : ";
-		std::getline(std::cin, str);
+		if(!std::getline(std::cin, str))
+			break;
 		str = TrimFunction(str);
 		if(!str.empty())
 			break;

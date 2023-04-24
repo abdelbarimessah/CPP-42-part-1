@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 00:10:14 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/04/14 01:42:32 by amessah          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:44:36 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ int main()
 	while(1)
 	{
 		std::cout << "\033[96m Enter an options\033[0m :\033[4m ";
-		std::getline(std::cin, str);
-		if(str == "A")
+		if(!std::getline(std::cin, str))
+			break;
+		if(str == "ADD")
 		{
 			if(i > 8)
 			{
@@ -75,7 +76,7 @@ int main()
 					k = 7;
 			}
 		}
-		else if(str == "S")
+		else if(str == "SEARCH")
 		{
 			std::string strr;
 			int status;
@@ -100,13 +101,14 @@ int main()
 				if(list[j].getNick_name().length() > 10)
 					std::cout << std::right << std::setw(9) << list[j].getNick_name().substr(0,9) << "." << "|"<< std::endl;
 				else
-					std::cout << std::right << std::setw(10) <<list[j].getNick_name() << "|"<< std::endl;
+					std::cout << std::right << std::setw(10) <<list[j].getNick_name() << "|"<< std::endl ;
 			}
-			std::cout << "enter index of cantact that you want to display : ";
-			std::getline(std::cin, x);
+			std::cout << std::endl <<  "enter index of cantact that you want to display : ";
+			if(!std::getline(std::cin, x))
+				break;
 			try {
 				status = stoi(x);
-				if(status  >= 0 && status <= 7 )
+				if(status  >= 0 && status <= 7 && status <= k)
 				{
 					std::cout << "First name     : "<< list[status].getFirst_name()    << std::endl;
 					std::cout << "Last name      : "<< list[status].getLast_name()    << std::endl;
@@ -115,8 +117,11 @@ int main()
 					std::cout << "Darkest Secret : "<< list[status].getDarkset_secret() << std::endl;
 					continue;
 				}
+				else
+					std::cout << "index not found!" << std::endl;
 			} catch (...) {
 				std::cout << "wrong index! try again " << std::endl;
+				continue;
 			}
 		}
 		else if(str == "EXIT")
