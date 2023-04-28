@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 00:10:14 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/04/28 23:55:48 by marvin           ###   ########.fr       */
+/*   Updated: 2023/04/28 23:59:45 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,26 +81,8 @@ void displayContacts(PhoneBook new_one, int k)
     std::cout << std::endl <<  "enter index of cantact that you want to display : ";
     if(!std::getline(std::cin, x))
         return;
-    // try {
-    //     status = stoi(x);
-    //     if(status  >= 0 && status <= 7 && status <= k)
-    //     {
-    //         std::cout << "First name     : "<< list[status].getFirst_name()    << std::endl;
-    //         std::cout << "Last name      : "<< list[status].getLast_name()    << std::endl;
-    //         std::cout << "Nick name      : "<< list[status].getNick_name()     << std::endl;
-    //         std::cout << "Phone number   : "<< list[status].getPhone_number()   << std::endl;
-    //         std::cout << "Darkest Secret : "<< list[status].getDarkset_secret() << std::endl;
-    //         return;
-    //     }
-    //     else
-    //         std::cout << "index not found!" << std::endl;
-    // } catch (...) {
-    //     std::cout << "wrong index! try again " << std::endl;
-    //     return;
-    // }
 	std::istringstream iss(x);
     if (iss >> status) {
-        // Check if conversion was successful and if index is valid
         if(status  >= 0 && status <= 7 && status <= k)
         {
             std::cout << "First name     : "<< list[status].getFirst_name()    << std::endl;
