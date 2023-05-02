@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 00:10:28 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/28 21:21:30 by amessah          ###   ########.fr       */
+/*   Created: 2023/05/02 01:54:45 by amessah           #+#    #+#             */
+/*   Updated: 2023/05/02 16:30:37 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
@@ -27,17 +29,17 @@ class Contact
 		std::string phone_number;
 		std::string darkest_secret;
 	public:
-		void setFirst_name(std::string str);
-		void setLast_name(std::string str);
-		void setNick_name(std::string str);
-		void setPhone_number(std::string str);
-		void setDarkest_secret(std::string str);
+		void setFirstName(std::string str);
+		void setLastName(std::string str);
+		void setNickName(std::string str);
+		void setPhoneNumber(std::string str);
+		void setDarkestSecret(std::string str);
 
-		std::string getFirst_name(void);
-		std::string getLast_name(void);
-		std::string getNick_name(void);
-		std::string getPhone_number(void);
-		std::string getDarkset_secret(void);
+		std::string getFirstName(void);
+		std::string getLastName(void);
+		std::string getNickName(void);
+		std::string getPhoneNumber(void);
+		std::string getDarksetSecret(void);
 };
 
 #endif

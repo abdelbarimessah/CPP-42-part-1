@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 01:02:06 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/04/17 11:56:42 by amessah          ###   ########.fr       */
+/*   Created: 2023/05/02 01:54:54 by amessah           #+#    #+#             */
+/*   Updated: 2023/05/02 16:42:47 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+
+
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
-	return ;
 }
 
 PhoneBook::~PhoneBook()
 {
-	return ;
 }
 
 void    PhoneBook::setContact(Contact cont, int index)
@@ -55,7 +55,7 @@ Contact PhoneBook::add_contact()
 		if(!str.empty())
 			break ;
 	}
-	new_cont.setFirst_name(str);
+	new_cont.setFirstName(str);
 	while(1)
 	{
 		std::cout << "Last Name : ";
@@ -65,7 +65,7 @@ Contact PhoneBook::add_contact()
 		if(!str.empty())
 			break ;
 	}
-	new_cont.setLast_name(str);
+	new_cont.setLastName(str);
 	while(1)
 	{
 		std::cout << "Nick Name : ";
@@ -75,7 +75,7 @@ Contact PhoneBook::add_contact()
 		if(!str.empty())
 			break ;
 	}
-	new_cont.setNick_name(str);
+	new_cont.setNickName(str);
 	while(1)
 	{
 		std::cout << "Phone number : ";
@@ -85,7 +85,7 @@ Contact PhoneBook::add_contact()
 		if(!str.empty())
 			break ;
 	}
-	new_cont.setPhone_number(str);
+	new_cont.setPhoneNumber(str);
 	while(1)
 	{
 		std::cout << "Darkest Secret : ";
@@ -95,6 +95,6 @@ Contact PhoneBook::add_contact()
 		if(!str.empty())
 			break;
 	}
-	new_cont.setDarkest_secret(str);
+	new_cont.setDarkestSecret(str);
 	return new_cont;
 }

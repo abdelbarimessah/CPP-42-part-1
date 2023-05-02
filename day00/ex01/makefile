@@ -3,28 +3,33 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
+#    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/22 00:07:56 by abdelbari         #+#    #+#              #
-#    Updated: 2022/12/22 00:10:12 by abdelbari        ###   ########.fr        #
+#    Created: 2023/05/02 01:54:10 by amessah           #+#    #+#              #
+#    Updated: 2023/05/02 16:41:28 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = My_Awsome
 
-CC = g++
 
-CFLAGS = -Wall -Wextra -Werror
+NAME = MyAwsome
+
+CC = c++
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 src =	main.cpp	\
-		contact.cpp	\
-		phonebook.cpp \
+		Contact.cpp	\
+		PhoneBook.cpp \
+
+header =	Contact.hpp\
+			PhoneBook.hpp\
 
 OBJECTS = $(src:.cpp=.o)
 
-all: $(NAME)
+all: $(NAME) $(header)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(header)
 	$(CC) $(CFLAGS) $(OBJECTS) -o  $(NAME)
 
 %.o : %.cpp

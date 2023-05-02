@@ -3,18 +3,19 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
+#    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/21 20:38:28 by abdelbari         #+#    #+#              #
-#    Updated: 2022/12/21 23:51:30 by abdelbari        ###   ########.fr        #
+#    Created: 2023/05/02 01:53:56 by amessah           #+#    #+#              #
+#    Updated: 2023/05/02 16:22:31 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 NAME = megaphone
 
-CC = g++
+CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 src =  megaphone.cpp	\
 
@@ -23,7 +24,7 @@ OBJECTS = $(src:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o  $(NAME)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.o : %.cpp
 	$(CC) $(CFLAGS) -o $@ -c $<

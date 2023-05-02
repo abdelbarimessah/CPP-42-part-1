@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 00:10:14 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/04/28 23:59:45 by marvin           ###   ########.fr       */
+/*   Created: 2023/05/02 01:54:23 by amessah           #+#    #+#             */
+/*   Updated: 2023/05/02 16:40:47 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+
+#include "PhoneBook.hpp"
 
 void	print_message(void)
 {
@@ -53,6 +54,18 @@ void add_contact_to_phonebook(PhoneBook& pb, int& i) {
     i++;
 }
 
+int f_isnumber(std::string str)
+{
+    int i = -1;
+    if(str.empty())
+        return (0);
+    while(str[++i])
+    {
+        if(!isdigit(str[i]))
+            return (0);
+    }
+    return (1);
+}
 void displayContacts(PhoneBook new_one, int k)
 {
     std::string x;
@@ -65,52 +78,55 @@ void displayContacts(PhoneBook new_one, int k)
     for(int j = 0; j < k; j++)
     {
         std::cout << std::right << std::setw(11) << j << "|";
-        if(list[j].getFirst_name().length() > 10)
-            std::cout << std::right << std::setw(9) << list[j].getFirst_name().substr(0,9) << "." << "|";
+        if(list[j].getFirstName().length() > 10)
+            std::cout << std::right << std::setw(9) << list[j].getFirstName().substr(0,9) << "." << "|";
         else
-            std::cout << std::right << std::setw(10) <<list[j].getFirst_name()<< "|";
-        if(list[j].getLast_name().length() > 10)  
-            std::cout << std::right << std::setw(9) << list[j].getLast_name().substr(0,9) << "."<< "|";
+            std::cout << std::right << std::setw(10) <<list[j].getFirstName()<< "|";
+        if(list[j].getLastName().length() > 10)  
+            std::cout << std::right << std::setw(9) << list[j].getLastName().substr(0,9) << "."<< "|";
         else
-            std::cout << std::right << std::setw(10) <<list[j].getLast_name()<< "|";
-        if(list[j].getNick_name().length() > 10)
-            std::cout << std::right << std::setw(9) << list[j].getNick_name().substr(0,9) << "." << "|"<< std::endl;
+            std::cout << std::right << std::setw(10) <<list[j].getLastName()<< "|";
+        if(list[j].getNickName().length() > 10)
+            std::cout << std::right << std::setw(9) << list[j].getNickName().substr(0,9) << "." << "|"<< std::endl;
         else
-            std::cout << std::right << std::setw(10) <<list[j].getNick_name() << "|"<< std::endl ;
+            std::cout << std::right << std::setw(10) <<list[j].getNickName() << "|"<< std::endl ;
     }
     std::cout << std::endl <<  "enter index of cantact that you want to display : ";
     if(!std::getline(std::cin, x))
         return;
-	std::istringstream iss(x);
-    if (iss >> status) {
+        
+    if(f_isnumber(x))
+    {
+        status = stoi(x);
         if(status  >= 0 && status <= 7 && status <= k)
         {
-            std::cout << "First name     : "<< list[status].getFirst_name()    << std::endl;
-            std::cout << "Last name      : "<< list[status].getLast_name()    << std::endl;
-            std::cout << "Nick name      : "<< list[status].getNick_name()     << std::endl;
-            std::cout << "Phone number   : "<< list[status].getPhone_number()   << std::endl;
-            std::cout << "Darkest Secret : "<< list[status].getDarkset_secret() << std::endl;
+            std::cout << "First name     : "<< list[status].getFirstName()    << std::endl;
+            std::cout << "Last name      : "<< list[status].getLastName()    << std::endl;
+            std::cout << "Nick name      : "<< list[status].getNickName()     << std::endl;
+            std::cout << "Phone number   : "<< list[status].getPhoneNumber()   << std::endl;
+            std::cout << "Darkest Secret : "<< list[status].getDarksetSecret() << std::endl;
             return;
         }
         else
+        
             std::cout << "index not found!" << std::endl;
-    } else {
+    }
+            
+        else {
         std::cout << "wrong index! try again " << std::endl;
         return;
     }
 }
+
 
 int main()
 {
 	PhoneBook new_one;
 	std::string str;
 	std::string x;
-	// x = "";
-	int i;
-	int k;
+	int i = 0;
+	int k = 0;
 
-	i = 0;
-	k = 0;
 	print_message();
 	while(1)
 	{
@@ -121,8 +137,8 @@ int main()
 		{
 			 add_contact_to_phonebook(new_one, i);
             k++;
-            if(k > 7)
-                k = 7;
+            if(k > 8)
+                k = 8;
 		}
 		else if(str == "SEARCH")
 			displayContacts(new_one, k);
