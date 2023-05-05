@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 07:10:06 by abdelbari         #+#    #+#              #
-#    Updated: 2023/01/03 10:59:45 by abdelbari        ###   ########.fr        #
+#    Updated: 2023/05/05 17:20:39 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Zombie
 
-GG = c++
+CC = c++
 
-Header1 =  Zombie.hpp
+Header =  Zombie.hpp
 
-VERSION = -std=c++98  -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 SRC =	main.cpp	\
@@ -29,10 +29,10 @@ OBJECTS = $(SRC:.cpp=.opp)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
-	$(GG) $(VERSION) $(OBJECTS) -o $(NAME)
+	$(CC) $(VERSION) $(OBJECTS) -o $(NAME)
 
-%.opp : %.cpp $(Header1)
-	$(GG) $(VERSION)  -o $@ -c $<
+%.opp : %.cpp $(Header)
+	$(CC) $(VERSION)  -o $@ -c $<
 
 clean:
 	rm -rf $(OBJECTS)

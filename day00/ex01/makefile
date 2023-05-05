@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 01:54:10 by amessah           #+#    #+#              #
-#    Updated: 2023/05/02 16:41:28 by amessah          ###   ########.fr        #
+#    Updated: 2023/05/05 02:30:15 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,12 @@ header =	Contact.hpp\
 
 OBJECTS = $(src:.cpp=.o)
 
-all: $(NAME) $(header)
+all: $(NAME) 
 
-$(NAME): $(OBJECTS) $(header)
+$(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o  $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(header)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
