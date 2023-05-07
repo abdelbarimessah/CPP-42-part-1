@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 07:10:06 by abdelbari         #+#    #+#              #
-#    Updated: 2023/05/05 17:20:39 by marvin           ###   ########.fr        #
+#    Updated: 2023/05/06 21:19:28 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,28 +14,28 @@ NAME = Zombie
 
 CC = c++
 
-Header =  Zombie.hpp
-
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-
-SRC =	main.cpp	\
+src =	main.cpp	\
 		Zombie.cpp	\
-		randomChump.cpp \
 		newZombie.cpp	\
+		randomChump.cpp \
 
-OBJECTS = $(SRC:.cpp=.opp)
+header =	Zombie.hpp	\
 
-all: $(NAME)
+OBJECTS = $(src:.cpp=.o)
 
-$(NAME): $(OBJECTS) 
-	$(CC) $(VERSION) $(OBJECTS) -o $(NAME)
+all: $(NAME) 
 
-%.opp : %.cpp $(Header)
-	$(CC) $(VERSION)  -o $@ -c $<
+$(NAME): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o  $(NAME)
+
+%.o : %.cpp $(header)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm -rf $(OBJECTS)
+
 fclean: clean
 	rm -rf $(NAME)
 

@@ -3,27 +3,35 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 11:07:54 by abdelbari         #+#    #+#              #
-#    Updated: 2023/01/03 11:08:36 by abdelbari        ###   ########.fr        #
+#    Updated: 2023/05/06 22:07:32 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = brain
+
 CC = c++
-FLAGS = -Wall -Wextra -Werror
-SRCS = main.cpp 
-OBJS = $(SRCS:.cpp=.o)
 
-%.o:%.cpp %.hpp
-	$(CC) $(FLAGS) -c $< -o $@
-all : $(NAME)
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-$(NAME) : $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
-clean :
-	rm -rf *.o
-fclean : clean
+src =	main.cpp	\
+
+OBJECTS = $(src:.cpp=.o)
+
+all: $(NAME) 
+
+$(NAME): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o  $(NAME)
+
+%.o : %.cpp
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+clean:
+	rm -rf $(OBJECTS)
+
+fclean: clean
 	rm -rf $(NAME)
-re : fclean all
+
+re: fclean all

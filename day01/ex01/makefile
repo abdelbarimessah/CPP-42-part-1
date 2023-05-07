@@ -3,38 +3,38 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 10:37:07 by abdelbari         #+#    #+#              #
-#    Updated: 2023/01/03 10:56:44 by abdelbari        ###   ########.fr        #
+#    Updated: 2023/05/06 21:23:02 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Zombie
 
-GG = c++
+CC = c++
 
-Header1 =  Zombie.hpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-VERSION = -Wall -Wextra -Werror
-
-
-SRC =	main.cpp	\
+src =	main.cpp	\
 		Zombie.cpp	\
 		zombieHorde.cpp	\
 
-OBJECTS = $(SRC:.cpp=.opp)
+header =	Zombie.hpp	\
 
-all: $(NAME)
+OBJECTS = $(src:.cpp=.o)
 
-$(NAME): $(OBJECTS) 
-	$(GG) $(VERSION) $(OBJECTS) -o $(NAME)
+all: $(NAME) 
 
-%.opp : %.cpp $(Header1)
-	$(GG) $(VERSION)  -o $@ -c $<
+$(NAME): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o  $(NAME)
+
+%.o : %.cpp $(header)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm -rf $(OBJECTS)
+
 fclean: clean
 	rm -rf $(NAME)
 

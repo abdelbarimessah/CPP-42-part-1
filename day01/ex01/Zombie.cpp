@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 10:36:15 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/03 10:54:04 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/05/06 21:29:34 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 Zombie::Zombie()
 {
-	return ;
 }
 
 Zombie::~Zombie()
 {
-	return ;
+    std::cout << name << ": is destroyed " << std::endl;
 }
 
 void Zombie::setZombie(std::string name)

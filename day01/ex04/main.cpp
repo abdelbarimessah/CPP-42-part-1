@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 13:23:25 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/07 17:23:53 by abdelbari        ###   ########.fr       */
+/*   Updated: 2023/05/07 04:32:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,89 +16,99 @@
 #include <string>
 #include <fstream>
 
-void ft_replace(std::string s, std::string s1, std::string s2, std::ofstream &newfile)
-{
-    // std::string ans = "";
-	// int i = 0;
-	// while(s[i])
-	// {
- 
-    //     int k = 0;
-    //     if (s[i] == s1[k] && i + s1.length() <= s.length())
-	// 	{
-    //         int j;
-    //         for (j = i; j < i + s1.length(); j++) 
-	// 		{
-    //             if (s[j] != s1[k])
-    //                 break;
-    //             else
-    //                 k = k + 1;
-    //         }
-    //         if (j == i + s1.length()) 
-	// 		{
-    //             ans.append(s2);
-    //             i = j - 1;
-    //         }
-    //         else
-    //             ans.push_back(s[i]);
-    //     }
-    //     else
-    //         ans.push_back(s[i]);
-    // }
-	size_t first_occurence;
-	std::string buff;
-	while (std::getline(newfile, buff))
-    {
-        while ((first_occurence = buff.find(s1)) != std::string::npos)
-            buff = buff.substr(0, first_occurence) + s2 + buff.substr(first_occurence + s1.length(), buff.length());
-        ofs << buff;
-        ofs << std::endl;
+// std::string ft_replace(std::string line, std::string s1, std::string s2)
+// {
+//     size_t i = 0;
+//     while(i < line.length())
+//         {
+//             i = line.find(s1, i);
+//             if(i == std::string::npos)
+//                 return(line);
+//             line.erase(i, s1.length());
+//             line.insert(i, s2);
+//             i += s2.length();
+//         }
+//     return(line);
+// }
+
+// int main(int ac,char **av)
+// {
+//     std::string line = "";
+//     std::string str1;
+//     std::string str2;
+//     std::string filename;
+//     std::string newstr;
+    
+//      if(ac != 4)
+//     {
+//         std::cout << "ERROR : Number of args" << std::endl;
+//         return 1;
+//     }
+//     filename = av[1];
+//     str1 = av[2];
+//     str2 = av[3];
+//     std::ifstream file(filename);
+//     if(file.fail())
+//     {
+//         std::cout << "file cannot be opened." << std::endl;
+//         return 1;
+//     }
+// 	filename += ".replace";
+//     std::ofstream ofile(filename);
+//     if(ofile.fail())
+//     {
+//         std::cout << "file cannot be opened." << std::endl;
+//         return 1;
+//     }
+//     while(getline(file, line))
+//     {
+//         line = ft_replace(line, str1, str2);
+//         ofile << line << std::endl;
+//     }
+//     file.close();
+//     ofile.close();
+//     return 0;
+// }
+
+std::string replace(std::string str1, std::string str2, std::string str){
+    size_t index;
+    if(str1 == str2){
+        std::cerr << "the 1st and 2nd strings are the same !" << std::endl;
+        exit(0);
     }
-    // newfile << ans;
-	// newfile << std::endl;
+    if(str1 == ""){
+        std::cerr << "str must not be null !" << std::endl;
+        exit(0);
+    }
+    while((index = str.find(str1)) != std::string::npos){
+        str = str.substr(0, index) + str2 + str.substr(index + str1.length(), -1);
+    }
+    return str;
 }
 
-int main(int argc, char **argv)
-{
-	std::string		file;
-	std::string		s1;
-	std::string		s2;
-	std::string		buffer;
-	std::ofstream	newfile;
-
-	file = argv[1];
-	s1 = argv[2];
-	s2 = argv[3];
-	if(s1 == s2)
-	{
-		std::cerr << "Error : same string s1 & s2";
-		return ;
-	}
-	std::ifstream	ifs(file);
-	if(argc != 4)
-	{
-		std::cout << "check the number of argument !" << std::endl;
-		return(1);
-	}
-	if(ifs.fail())
-	{
-		std::cerr << "Error : file error!" << std::endl;
-		return(1);
-	}
-	file = file + ".replace";
-	std::ofstream ofs(file);
-	if(ofs.fail())
-	{
-		std::cout << "Error : file error!" << std::endl;
-		return(1);
-	}
-	if(!newfile.is_open())
-	{
-		std::cout << "Error : can't open " << file << ".replace file" << std::endl;
-		return(1); 
-	}
-	while(getline(file, buffer, '\0'))
-		ft_replace(buffer, s1, s2, newfile);
-	ifs.close();
-	ofs.close();
+int main (int ac, char **av){
+    if(ac == 4){
+        std::string file_name = av[1];
+        std::ifstream file(file_name);
+        if(file.fail()){
+            std::cerr << "Could not open the FILE" << file_name << "check again !" << std::endl;
+            return 0;
+        }
+        file_name += ".replace";
+        std::ofstream file_rep(file_name);
+        if(file_rep.fail()){
+            std::cerr << "Could not open the FILE" << file_name << "check again !" << std::endl;
+            return 0;
+        }
+        std::string str;
+        std::getline(file, str, '\0');
+        str = replace(av[2], av[3], str);
+        file_rep << str;
+        file.close();
+        file_rep.close();
+    }
+    else {
+        std::cerr << "The number or args is WRONG !" << std::endl;
+    }
+    return 0;
 }
