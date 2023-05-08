@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/03 11:07:54 by abdelbari         #+#    #+#              #
-#    Updated: 2023/05/06 22:07:32 by marvin           ###   ########.fr        #
+#    Created: 2023/05/08 00:39:53 by amessah           #+#    #+#              #
+#    Updated: 2023/05/08 00:39:55 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = brain
 

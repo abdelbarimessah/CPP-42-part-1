@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/03 10:37:07 by abdelbari         #+#    #+#              #
-#    Updated: 2023/05/06 21:23:02 by marvin           ###   ########.fr        #
+#    Created: 2023/05/08 00:39:26 by amessah           #+#    #+#              #
+#    Updated: 2023/05/08 00:39:28 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = Zombie
 

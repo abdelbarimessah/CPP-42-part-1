@@ -3,22 +3,21 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
+#    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/03 19:42:21 by abdelbari         #+#    #+#              #
-#    Updated: 2023/01/04 11:20:15 by abdelbari        ###   ########.fr        #
+#    Created: 2023/05/08 00:36:24 by amessah           #+#    #+#              #
+#    Updated: 2023/05/08 00:37:06 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 NAME = unnecessary_violence
 
-GG = c++
+CC = c++
 
-Header1 =  HumanB.hpp
-Header2 =  HumanA.hpp
-Header3 =  Weapon.hpp
+Header =  HumanB.hpp HumanA.hpp Weapon.hpp
 
-VERSION = -Wall -Wextra -Werror
+VERSION = -std=c++98  -Wall -Wextra -Werror
 
 
 SRC =	main.cpp	\
@@ -31,10 +30,10 @@ OBJECTS = $(SRC:.cpp=.opp)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
-	$(GG) $(VERSION) $(OBJECTS) -o $(NAME)
+	$(CC) $(VERSION) $(OBJECTS) -o $(NAME)
 
-%.opp : %.cpp $(Header1)
-	$(GG) $(VERSION)  -o $@ -c $<
+%.opp : %.cpp $(Header)
+	$(CC) $(VERSION)  -o $@ -c $<
 
 clean:
 	rm -rf $(OBJECTS)

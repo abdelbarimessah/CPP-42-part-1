@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+         #
+#    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/04 13:25:11 by abdelbari         #+#    #+#              #
-#    Updated: 2023/01/07 17:23:56 by abdelbari        ###   ########.fr        #
+#    Created: 2023/05/08 00:40:10 by amessah           #+#    #+#              #
+#    Updated: 2023/05/08 00:40:12 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Sed_is_for_losers
+NAME = sedIsForLosers
 
-GG = c++
+CC = c++
 
-# Header1 =  header.hpp
+Header =  sedIsForLosers.hpp
 
 VERSION = -std=c++98  -Wall -Wextra -Werror
 
@@ -26,10 +26,10 @@ OBJECTS = $(SRC:.cpp=.opp)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
-	$(GG) $(VERSION) $(OBJECTS) -o $(NAME)
+	$(CC) $(VERSION) $(OBJECTS) -o $(NAME)
 
-%.opp : %.cpp
-	$(GG) $(VERSION)  -o $@ -c $<
+%.opp : %.cpp $(Header)
+	$(CC) $(VERSION)  -o $@ -c $<
 
 clean:
 	rm -rf $(OBJECTS)

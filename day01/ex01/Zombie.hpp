@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelbari <abdelbari@student.42.fr>        +#+  +:+       +#+        */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 10:34:01 by abdelbari         #+#    #+#             */
-/*   Updated: 2023/01/03 10:52:22 by abdelbari        ###   ########.fr       */
+/*   Created: 2023/05/08 00:39:36 by amessah           #+#    #+#             */
+/*   Updated: 2023/05/08 00:39:38 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
