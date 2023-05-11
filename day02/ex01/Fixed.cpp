@@ -16,13 +16,14 @@ Fixed::Fixed(){
 }
 
 Fixed::Fixed(const int num){
-    this->n_fix = num * Power_calcul(2, this->frac_bits);
     std::cout << "Int constructor called" << std::endl;
+    this->n_fix = num * Power_calcul(2, this->frac_bits);
 }
 
-Fixed::Fixed(const float num){
-    this->n_fix = roundf(num * Power_calcul(2, this->frac_bits));
+Fixed::Fixed(const float raw)
+{
     std::cout << "Float constructor called" << std::endl;
+    this->fix_p = (int)roundf(raw * (1 << frac_bits));
 }
 
 Fixed::Fixed(const Fixed & fix){
