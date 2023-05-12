@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 00:49:59 by amessah           #+#    #+#             */
+/*   Updated: 2023/05/12 00:49:59 by amessah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
@@ -9,7 +21,7 @@ Fixed::Fixed()
 Fixed::Fixed(Fixed const & fix)
 {
     std::cout << "Copy constructor called" << std::endl;
-    this->fix_number = fix.getRawBits();
+    *this = fix;
 }
 
 Fixed &Fixed::operator=(const Fixed &fix){

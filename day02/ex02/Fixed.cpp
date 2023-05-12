@@ -1,32 +1,41 @@
-#include "Fixed.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 01:05:32 by amessah           #+#    #+#             */
+/*   Updated: 2023/05/12 01:05:32 by amessah          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int Power_calcul(int num, int pow){
-    int ret = 1;
-    int i = 0;
-    while(i < pow){
-        ret *= num;
-        i++;
-    }
-    return (ret);
-}
+#include "Fixed.hpp"
 
 Fixed::Fixed(){
     this->n_fix = 0;
 }
 
-Fixed::Fixed(const int num){
-    this->n_fix = num * Power_calcul(2, this->frac_bits);
-}
-
-Fixed::Fixed(const float num){
-    this->n_fix = roundf(num * Power_calcul(2, this->frac_bits));
-}
-
 Fixed::Fixed(const Fixed & fix){
-    this->n_fix = fix.getRawBits();
+    *this = fix;
 }
 
-Fixed::~Fixed(){}
+Fixed::~Fixed(){
+}
+
+Fixed::Fixed(const int num){
+    this->n_fix = num << frac_bits;
+}
+
+Fixed::Fixed(const float raw)
+{
+    this->n_fix = (int)roundf(raw * (1 << frac_bits));
+}
+
+Fixed& Fixed:: operator= (Fixed const &fix){
+    this->n_fix = fix.n_fix;
+    return *this;
+}
 
 int Fixed::getRawBits(void) const{
     return (this->n_fix);
@@ -37,45 +46,41 @@ void Fixed::setRawBits(int const raw){
 }
 
 float Fixed::toFloat() const{
-    return ((float) this->getRawBits()) / Power_calcul(2, this->frac_bits);
+    return (float)this->getRawBits() / (1 << frac_bits);
 }
 
 int Fixed::toInt() const{
-    return (this->getRawBits() / Power_calcul(2, this->frac_bits));
+    return (int)this->getRawBits() / (1 << frac_bits);
 }
 
-std::ostream & operator<< (std::ostream & os, Fixed const & fix){
+std::ostream & operator<< (std::ostream & os, Fixed const & fix)
+{
     os << fix.toFloat();
     return os;
 }
 
-Fixed& Fixed:: operator= (Fixed const &fix){
-    this->n_fix = fix.getRawBits();
-    return *this;
-}
-
 bool Fixed:: operator> (Fixed const &fix){
-    return this->getRawBits() > fix.getRawBits();
+    return this->toFloat() > fix.toFloat();
 }
 
 bool Fixed:: operator< (Fixed const &fix){
-    return this->getRawBits() < fix.getRawBits();
+    return this->toFloat() < fix.toFloat();
 }
 
 bool Fixed:: operator<= (Fixed const &fix){
-    return this->getRawBits() <= fix.getRawBits();
+    return this->toFloat() <= fix.toFloat();
 }
 
 bool Fixed:: operator>= (Fixed const &fix){
-    return this->getRawBits() >= fix.getRawBits();
+    return this->toFloat() >= fix.toFloat();
 }
 
 bool Fixed:: operator== (Fixed const &fix){
-    return this->getRawBits() == fix.getRawBits();
+    return this->toFloat() == fix.toFloat();
 }
 
 bool Fixed:: operator!= (Fixed const &fix){
-    return this->getRawBits() != fix.getRawBits();
+    return this->toFloat() != fix.toFloat();
 }
 
 Fixed Fixed::operator+(Fixed const &fix){
