@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 03:14:09 by amessah           #+#    #+#             */
-/*   Updated: 2023/05/14 01:19:26 by amessah          ###   ########.fr       */
+/*   Updated: 2023/05/14 16:47:40 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define  CLAPTRAP_HPP
 
 #include "iostream"
-
+#include "string.h"
 
 class ClapTrap
 {

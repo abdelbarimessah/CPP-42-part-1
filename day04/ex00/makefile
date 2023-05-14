@@ -5,23 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/12 16:35:42 by amessah           #+#    #+#              #
-#    Updated: 2023/05/14 01:23:27 by amessah          ###   ########.fr        #
+#    Created: 2023/05/14 18:42:58 by amessah           #+#    #+#              #
+#    Updated: 2023/05/14 18:43:27 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = poly
 
 CC = c++
 
-Header =  ClapTrap.hpp ScavTrap.hpp
+Header =  poly.hpp
 
 VERSION = -std=c++98  -Wall -Wextra -Werror
 
 
 SRC =	main.cpp	\
-		ClapTrap.cpp	\
-		ScavTrap.cpp	\
 
 OBJECTS = $(SRC:.cpp=.opp)
 

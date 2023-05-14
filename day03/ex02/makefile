@@ -6,15 +6,15 @@
 #    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 16:35:42 by amessah           #+#    #+#              #
-#    Updated: 2023/05/14 01:23:27 by amessah          ###   ########.fr        #
+#    Updated: 2023/05/14 16:44:48 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = FragTrap
 
 CC = c++
 
-Header =  ClapTrap.hpp ScavTrap.hpp
+Header =  ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
 
 VERSION = -std=c++98  -Wall -Wextra -Werror
 
@@ -22,6 +22,7 @@ VERSION = -std=c++98  -Wall -Wextra -Werror
 SRC =	main.cpp	\
 		ClapTrap.cpp	\
 		ScavTrap.cpp	\
+		FragTrap.cpp	\
 
 OBJECTS = $(SRC:.cpp=.opp)
 

@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:33:03 by amessah           #+#    #+#             */
-/*   Updated: 2023/05/13 03:13:29 by marvin           ###   ########.fr       */
+/*   Updated: 2023/05/14 01:19:56 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) : Name(name)
 {
 	std::cout << "ClapTrap " << name << " has been constructed!" << std::endl;
-	this->Name = name;
 	this->HitPoint = 10;
 	this->EnergyPoints = 10;
 	this->AttackDamage = 10;
@@ -26,7 +25,7 @@ ClapTrap::ClapTrap(ClapTrap const &clap)
 	*this = clap;
     std::cout << "ClapTrap " << Name << " has been copied from " << clap.Name << "!" << std::endl;
 }
-ClapTrap ClapTrap::operator=(const ClapTrap &clap)
+ClapTrap &ClapTrap::operator=(const ClapTrap &clap)
 {
 	std::cout << "ClapTrap " << Name << " has been assigned from " << clap.Name << "!" << std::endl;
     if(this != &clap)
