@@ -1,65 +1,31 @@
-#include<iostream>
-using namespace std; 
- 
-// class Add
-// { 
-// public: 
-//     virtual void print () 
-//     { int a=20, b=30;
-//      cout<< " base class Action is:"<<a+b <<endl;
-//       } 
- 
-//     void show () 
-//     { cout<< "show base class" <<endl; } 
-// }; 
- 
-// class Sub: public Add 
-// { 
-// public: 
-//     void print () //print () is already virtual function in derived class, we could also declared as virtual void print () explicitly 
-//     { int x=20,y=10;
-      
-//     cout<< " derived class Action:"<<x-y <<endl; } 
- 
-//     void show () 
-//     { cout<< "show derived class" <<endl; } 
-// }; 
- 
-// //main function 
-// int main() 
-// { 
-//     Add *aptr; 
-//     Sub s; 
-//     aptr = &s; 
-     
-//     //virtual function, binded at runtime (Runtime polymorphism) 
-//     aptr->print(); 
-     
-//     // Non-virtual function, binded at compile time 
-//     aptr->show(); 
- 
-//     return 0; 
-// } 
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-class Animal  
-{  
-    public:  
-    virtual void show() = 0;  //Pure virtual function declaration.
-};  
-class Man: public Animal  
-{  
-    public:  
-    void show()  
-    {  
-        cout << "Man is the part of animal husbandry " << endl;  
-    }  
-};  
-int main()  
-{  
-    Animal *aptr; //Base class pointer 
-    //Animal a;  
-    Man m;  //derived class object creation.
-    aptr = &m;  
-    aptr->show();  
-    return 0;  
+int main()
+{
+    Animal *typ1 = new Animal;
+    Animal *typ2 = new Cat;
+    Animal *typ3 = new Dog;
+    WrongAnimal *typ4 = new WrongAnimal;
+    WrongAnimal *typ5 = new WrongCat;
+
+    std::cout << typ1->getType() << "\n";
+    typ1->makeSound();
+    std::cout << typ2->getType() << "\n";
+    typ2->makeSound();
+    std::cout << typ3->getType() << "\n";
+    typ3->makeSound();
+    std::cout << typ4->getType() << "\n";
+    typ4->makeSound();
+    std::cout << typ5->getType() << "\n";
+    typ5->makeSound();
+
+    delete typ1;
+    delete typ2;
+    delete typ3;
+    delete typ4;
+    delete typ5;
 }
