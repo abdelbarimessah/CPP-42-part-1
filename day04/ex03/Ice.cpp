@@ -1,8 +1,4 @@
-
-
-#include <iostream>
-#include "../includes/AMateria.class.hpp"
-#include "../includes/Ice.class.hpp"
+#include "Ice.hpp"
 
 Ice::Ice() : AMateria("ice") {}
 

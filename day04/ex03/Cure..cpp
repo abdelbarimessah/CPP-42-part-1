@@ -1,8 +1,4 @@
-
-
-#include <iostream>
-#include "../includes/AMateria.class.hpp"
-#include "../includes/Cure.class.hpp"
+#include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure") {}
 
@@ -24,5 +20,4 @@ AMateria* Cure::clone() const
 	Cure* ptrCure;
 	ptrCure = new Cure;
 	return ptrCure;
-	// return new Cure(*this);
 }

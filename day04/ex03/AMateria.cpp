@@ -1,17 +1,16 @@
+#include "AMateria.hpp"
 
-#include <iostream>
-#include "../includes/AMateria.class.hpp"
 
 AMateria::AMateria() {}
 AMateria::~AMateria() {}
 AMateria::AMateria(std::string const & type) : _type(type) {}
 
-AMateria::AMateria(const AMateria& src) // canonical copy constructor
+AMateria::AMateria(const AMateria& src)
 {
 	*this = src;
 }
 
-AMateria&	AMateria::operator=(const AMateria &rhs) // canonical assignment constructor
+AMateria&	AMateria::operator=(const AMateria &rhs)
 {
 	if (this != &rhs)
 		this->_type = rhs._type;
